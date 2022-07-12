@@ -2,7 +2,9 @@
   --round: 20px;
 }
 
-.container {
+/* ============================ App 1 ============================ */
+
+.AppOne__container {
   display: grid;
   grid-template-columns: repeat(6, 1fr) minmax(100px, 1fr);
   grid-template-rows: repeat(8, 1fr) minmax(100px, 1fr);
@@ -14,12 +16,12 @@ figure {
   margin: 0;
 }
 
-.item-one {
+.AppOne__item-one {
   grid-column: 1 / -1;
   grid-row: 1 / 6;
 }
 
-.item-two {
+.AppOne__item-two {
   z-index: 2;
   grid-column: 2 /-1;
   grid-row: 4 / 8;
@@ -27,14 +29,14 @@ figure {
   border-top-left-radius: var(--round);
 }
 
-.title {
+.AppOne__title {
   font-size: 1.5rem;
 }
-.title-two {
+.AppOne__title-two {
   padding-left: var(--round);
 }
 
-.image {
+.AppOne__image {
   width: 100%;
   height: 100%;
   background-position: center center;
@@ -42,7 +44,7 @@ figure {
   background-size: cover;
 }
 
-.image-one {
+.AppOne__image-one {
   border-radius: var(--round);
   clip-path: polygon(
     30% 0%,
@@ -56,7 +58,57 @@ figure {
   );
   background-image: url(https://loremflickr.com/400/300/);
 }
-.image-two {
+.AppOne__image-two {
   clip-path: inset(5% 0px 0px 3% round var(--round));
   background-image: url(https://placekitten.com/640/360);
+}
+
+@media (max-width: 900px) {
+  .AppOne__container {
+    grid-template-columns: repeat(6, 1fr) minmax(80px, 1fr);
+    grid-template-rows: repeat(8, 1fr) minmax(80px, 1fr);
+  }
+  .AppOne__title {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .AppOne__container {
+    grid-template-columns: repeat(6, 1fr) minmax(60px, 1fr);
+    grid-template-rows: repeat(8, 1fr) minmax(60px, 1fr);
+  }
+  .AppOne__title {
+    font-size: 1rem;
+  }
+}
+
+/* ============================ App 2 ============================ */
+
+.AppTwo__container {
+  display: grid;
+  grid-template-columns: 700px;
+  grid-template-rows: 400px;
+}
+
+.AppTwo__container > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.AppTwo__item {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.AppTwo__image-one {
+  width: 100%;
+  height: 100%;
+  background-image: url(https://loremflickr.com/400/300/);
+}
+.AppTwo__image-two {
+  width: 83.2%;
+  transform: translate(20%, 60%);
+  background-image: url(https://loremflickr.com/400/300/);
 }
